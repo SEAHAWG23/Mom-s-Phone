@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phone & Plan Recommendation Dashboard</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f7;
+      color: #111827;
+    }
+    header {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 20px 24px;
+    }
+    header h1 {
+      margin: 0 0 4px 0;
+      font-size: 24px;
+    }
+    header p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    main {
+      padding: 20px 24px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h2 {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #111827;
+    }
+    h3 {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #111827;
+    }
+    p {
+      line-height: 1.5;
+      font-size: 14px;
+      margin: 6px 0 10px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 14px 16px 16px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+      border: 1px solid #e5e7eb;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .tag-good {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .tag-warn {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .tag-bad {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .tag-best {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+    .highlight {
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin: 10px 0 14px;
+      font-size: 14px;
+    }
+    .steps ol {
+      padding-left: 18px;
+      font-size: 14px;
+    }
+    .steps li {
+      margin-bottom: 6px;
+    }
+    .letter {
+      white-space: pre-wrap;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 14px 16px 16px;
+      border: 1px solid #e5e7eb;
+    }
+    .small {
+      font-size: 12px;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Phone & Plan Recommendation for You</h1>
+  <p>Clear breakdown of coverage, cost, and the best iPhone options — so you can see exactly what you’d be getting.</p>
+</header>
+
+<main>
+  <!-- Summary -->
+  <section>
+    <h2>Quick Summary</h2>
+    <div class="highlight">
+      <strong>Best balance of cost and coverage:</strong><br />
+      <strong>Option A (Best Coverage at Home):</strong> Verizon + iPhone 14 or 15 — most reliable signal at your house, higher monthly cost.<br />
+      <strong>Option B (Best Price Overall):</strong> T‑Mobile Essentials 55+ + iPhone 14 or 15 — lowest monthly bill, excellent coverage in Olympia and town.
+    </div>
+    <p class="small">
+      Note: In the detailed analysis, we found that “TMobile is the only major carrier offering 55+ plans in Washington” and that
+      “TMobile iPhone 14 or 15 ($2–$3/mo)” is the best overall phone deal for seniors. 
+    </p>
+  </section>
+
+  <!-- Coverage comparison -->
+  <section>
+    <h2>Coverage Comparison</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>At Home (Agate Rd, Shelton)</h3>
+        <table>
+          <tr>
+            <th>Carrier</th>
+            <th>Home Signal</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Verizon</td>
+            <td><span class="tag tag-best">Best</span></td>
+            <td>Strongest rural and indoor coverage at your house.</td>
+          </tr>
+          <tr>
+            <td>AT&amp;T</td>
+            <td><span class="tag tag-warn">OK</span></td>
+            <td>Usable, but weaker indoors and less consistent.</td>
+          </tr>
+          <tr>
+            <td>T‑Mobile</td>
+            <td><span class="tag tag-bad">Weak</span></td>
+            <td>Trees and terrain around Agate reduce signal strength.</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>In Town (Shelton &amp; Olympia)</h3>
+        <table>
+          <tr>
+            <th>Carrier</th>
+            <th>Town Coverage</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Verizon</td>
+            <td><span class="tag tag-best">Excellent</span></td>
+            <td>Very strong in both Shelton and Olympia.</td>
+          </tr>
+          <tr>
+            <td>T‑Mobile</td>
+            <td><span class="tag tag-good">Very Good</span></td>
+            <td>Excellent 5G in Olympia, good in Shelton.</td>
+          </tr>
+          <tr>
+            <td>AT&amp;T</td>
+            <td><span class="tag tag-warn">Fair</span></td>
+            <td>Least consistent of the three in this area.</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost comparison -->
+  <section>
+    <h2>Monthly Cost: Plans Only</h2>
+    <div class="card">
+      <table>
+        <tr>
+          <th>Carrier</th>
+          <th>Plan</th>
+          <th>Senior Plan?</th>
+          <th>Estimated Monthly Total (with taxes)</th>
+        </tr>
+        <tr>
+          <td>T‑Mobile</td>
+          <td>Essentials 55+ (Unlimited)</td>
+          <td><span class="tag tag-best">Yes</span></td>
+          <td>$43–$46 / month</td>
+        </tr>
+        <tr>
+          <td>Verizon</td>
+          <td>Welcome Unlimited</td>
+          <td><span class="tag tag-bad">No (FL only)</span></td>
+          <td>$55–$63 / month</td>
+        </tr>
+        <tr>
+          <td>AT&amp;T</td>
+          <td>Unlimited Starter</td>
+          <td><span class="tag tag-bad">No (FL only)</span></td>
+          <td>$55–$63 / month</td>
+        </tr>
+      </table>
+      <p class="small">
+        From the analysis: “TMobile Essentials 55+ — $40/mo… Real monthly total: $43–$46/month” and
+        “Verizon… Total: $55–$63/mo… AT&amp;T… $55–$63/mo.” 
+      </p>
+    </div>
+  </section>
+
+  <!-- Phone + plan total cost -->
+  <section>
+    <h2>Total Monthly Cost: Plan + iPhone</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Option A – Best Coverage at Home (Verizon)</h3>
+        <table>
+          <tr>
+            <th>iPhone</th>
+            <th>Phone Payment</th>
+            <th>Plan + Taxes</th>
+            <th>Total / Month</th>
+          </tr>
+          <tr>
+            <td>iPhone 14</td>
+            <td>$10–$20</td>
+            <td>$55–$63</td>
+            <td>$65–$83</td>
+          </tr>
+          <tr>
+            <td>iPhone 15</td>
+            <td>$15–$25</td>
+            <td>$55–$63</td>
+            <td>$70–$88</td>
+          </tr>
+        </table>
+        <p><strong>What this means:</strong> Best signal at home, but the highest monthly bill.</p>
+      </div>
+
+      <div class="card">
+        <h3>Option B – Best Price Overall (T‑Mobile 55+)</h3>
+        <table>
+          <tr>
+            <th>iPhone</th>
+            <th>Phone Payment</th>
+            <th>Plan + Taxes</th>
+            <th>Total / Month</th>
+          </tr>
+          <tr>
+            <td>iPhone 14</td>
+            <td>$5–$10</td>
+            <td>$43–$46</td>
+            <td><strong>$48–$56</strong></td>
+          </tr>
+          <tr>
+            <td>iPhone 15</td>
+            <td>$8–$12</td>
+            <td>$43–$46</td>
+            <td><strong>$51–$58</strong></td>
+          </tr>
+        </table>
+        <p><strong>What this means:</strong> Lowest monthly bill, excellent coverage in Olympia and town, weaker at the house than Verizon.</p>
+        <p class="small">
+          The document notes: “Most realistic total for her: $48–$58/month (iPhone 14 or 15 + TMobile 55+ plan).” 
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- One-time costs -->
+  <section>
+    <h2>One‑Time Costs</h2>
+    <div class="card">
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Cost</th>
+        </tr>
+        <tr>
+          <td>Activation fee</td>
+          <td>$35</td>
+        </tr>
+        <tr>
+          <td>Number transfer (keep your number)</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>SIM / eSIM</td>
+          <td>Free</td>
+        </tr>
+        <tr>
+          <td>Case &amp; screen protector (optional)</td>
+          <td>$20–$40</td>
+        </tr>
+      </table>
+      <p class="small">
+        As summarized: “Activation fee: $35… Number transfer: Free… SIM/eSIM: Free… Case/screen protector: $20–$40.” 
+      </p>
+    </div>
+  </section>
+
+  <!-- Step-by-step plan -->
+  <section class="steps">
+    <h2>Step‑by‑Step: How to Switch</h2>
+    <div class="card">
+      <h3>1. Decide on Carrier &amp; Phone</h3>
+      <ol>
+        <li>Choose between:
+          <ul>
+            <li><strong>Verizon + iPhone 14/15</strong> (best home coverage), or</li>
+            <li><strong>T‑Mobile Essentials 55+ + iPhone 14/15</strong> (best price, great in town).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>2. Go to the Carrier Store (or Order Online)</h3>
+      <ol>
+        <li>Bring your current AT&amp;T flip phone and a photo ID.</li>
+        <li>Tell them you want to:
+          <ul>
+            <li>Keep your current phone number.</li>
+            <li>Move to an unlimited plan.</li>
+            <li>Get an iPhone on a monthly installment.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>3. Number Transfer &amp; Setup</h3>
+      <ol>
+        <li>The new carrier will transfer your number from AT&amp;T (this is free).</li>
+        <li>They will activate the new iPhone and make sure calls and texts work. (Bring your Apple ID and Password)</li>
+        <li>They can help move contacts from the old phone if needed.</li>
+      </ol>
+
+      <h3>4. Learn the Basics on the iPhone</h3>
+      <ol>
+        <li>Have them show you:
+          <ul>
+            <li>How to make and receive calls.</li>
+            <li>How to read and send text messages.</li>
+            <li>How to adjust volume and ringer.</li>
+            <li>How to charge the phone.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h3>5. Cancel Old AT&amp;T Plan (If Needed)</h3>
+      <ol>
+        <li>Once the new phone is working and your number is transferred, AT&amp;T service will usually stop automatically.</li>
+        <li>Check your final AT&amp;T bill to confirm there are no remaining charges.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Letter to her -->
+  <section>
+    <h2>Plain‑Language Explanation You Can Read</h2>
+    <div class="letter">
+Dear Mom/Grandma,
+
+I went through all the options for upgrading your phone from the old AT&amp;T flip phone to a modern iPhone with unlimited talk, text, and data. I looked at the real monthly costs, the senior discounts, and how good the coverage is where you live and where you go.
+
+Here’s the short version:
+
+- At your house on Agate Road, Verizon has the strongest signal.
+- In town (Shelton and Olympia), both Verizon and T‑Mobile work very well.
+- T‑Mobile has the best senior discount and the cheapest overall bill.
+- AT&amp;T is the most expensive and has the weakest service for you, so it doesn’t make sense to stay there.
+
+You really have two good choices:
+
+1) Verizon + iPhone 14 or 15  
+   - Best coverage at your house.  
+   - More expensive each month (around $65–$80 total).  
+   - Good if you care most about the phone working as well as possible at home.
+
+2) T‑Mobile Essentials 55+ + iPhone 14 or 15  
+   - Special 55+ plan that only T‑Mobile offers in Washington.  
+   - Lowest monthly cost (about $48–$58 total, including the phone).  
+   - Excellent coverage in Olympia and town, but not quite as strong as Verizon right at your house.
+
+Either way, you would get:
+- Unlimited talk, text, and data.
+- A modern iPhone that will be supported for many years.
+- No more refill cards or worrying about running out of minutes.
+
+If you want the most reliable signal at home, I’d lean toward Verizon.  
+If you want the lowest bill and you’re okay with slightly weaker coverage at the house (but great in town), I’d lean toward T‑Mobile.
+
+
+
+Love,  
+[The Seegirst/Davia Team]
+    </div>
+  </section>
+</main>
+</body>
+</html>
+

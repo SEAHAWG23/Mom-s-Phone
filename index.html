@@ -168,6 +168,38 @@ th {
     font-size: 13px;
   }
 }
+.coverage-links {
+    margin-top: 15px;
+}
+
+.coverage-links h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.coverage-btn {
+    display: block;
+    padding: 10px 14px;
+    margin: 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background: #444; /* fallback */
+    text-align: center;
+    box-sizing: border-box;
+}
+.verizon { background: #cc0000; }
+.tmobile { background: #e20074; }
+.att { background: #0077cc; }
+.fcc { background: #005ea2; }
+
+.coverage-btn:hover {
+    opacity: 0.9;
+}
+
 
   </style>
 </head>
@@ -247,6 +279,42 @@ th {
           </tr>
         </table>
       </div>
+	  <div class="card">
+    <h3>Coverage Comparison</h3>
+
+    <p>Verizon has the strongest rural coverage in WA and VA...</p>
+    <p>T-Mobile has the best 5G density in cities...</p>
+    <!-- whatever content you already have -->
+
+    <!-- Insert the buttons here -->
+    <div class="coverage-links">
+        <h2>Official Coverage Maps</h2>
+
+        <a href="https://www.verizon.com/coverage-map/"
+           target="_blank"
+           class="coverage-btn verizon">
+           Verizon Coverage Map
+        </a>
+
+        <a href="https://www.t-mobile.com/coverage/coverage-map"
+           target="_blank"
+           class="coverage-btn tmobile">
+           T-Mobile Coverage Map
+        </a>
+
+        <a href="https://www.att.com/maps/wireless-coverage.html"
+           target="_blank"
+           class="coverage-btn att">
+           AT&T Coverage Map
+        </a>
+		<a href="https://broadbandmap.fcc.gov/location-summary/mobile?version=jun2025&addr_full=121+East+Blackbeard+Run%2C+Shelton%2C+Washington+98584%2C+United+States&lon=-122.96904&lat=47.21153&zoom=14.26&vlon=-122.969931&vlat=47.210469&env=0&tech=tech4g"
+           target="_blank"
+           class="coverage-btn FCC">
+           FCC National Broadband Map
+        </a>
+    </div>
+</div>
+
     </div>
   </section>
 

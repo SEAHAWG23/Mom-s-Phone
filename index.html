@@ -199,6 +199,34 @@ th {
 .coverage-btn:hover {
     opacity: 0.9;
 }
+.pros-text {
+  color: #15803d;   /* green-700 */
+  font-weight: 600;
+}
+
+.cons-text {
+  color: #b91c1c;   /* red-700 */
+  font-weight: 600;
+}
+
+/* Normalize spacing so Pros & Cons align perfectly */
+.pros-text, .cons-text {
+  margin: 0;
+  padding: 0;
+}
+
+.pros-text ul, .cons-text ul {
+  margin-top: 4px;
+  margin-bottom: 12px;
+  padding-left: 18px; /* consistent bullet alignment */
+}
+/* Fix bullet alignment inside cards */
+ul.pros-text,
+ul.cons-text {
+  margin-left: 0;
+  padding-left: 18px;      /* adjust indent as you like */
+  list-style-position: inside;
+}
 
 
   </style>
@@ -288,35 +316,196 @@ th {
 
     <!-- Insert the buttons here -->
     <div class="coverage-links">
-        <h2>Official Coverage Maps</h2>
+    <h3>Official Coverage Maps</h3>
 
-        <a href="https://www.verizon.com/coverage-map/"
-           target="_blank"
-           class="coverage-btn verizon">
-           Verizon Coverage Map
-        </a>
+    <a href="https://www.verizon.com/coverage-map/"
+       target="_blank"
+       class="coverage-btn verizon">
+       Verizon Coverage Map
+    </a>
 
-        <a href="https://www.t-mobile.com/coverage/coverage-map"
-           target="_blank"
-           class="coverage-btn tmobile">
-           T-Mobile Coverage Map
-        </a>
+    <a href="https://www.t-mobile.com/coverage/coverage-map"
+       target="_blank"
+       class="coverage-btn tmobile">
+       T-Mobile Coverage Map
+    </a>
 
-        <a href="https://www.att.com/maps/wireless-coverage.html"
-           target="_blank"
-           class="coverage-btn att">
-           AT&T Coverage Map
-        </a>
-		<a href="https://broadbandmap.fcc.gov/location-summary/mobile?version=jun2025&addr_full=121+East+Blackbeard+Run%2C+Shelton%2C+Washington+98584%2C+United+States&lon=-122.96904&lat=47.21153&zoom=14.26&vlon=-122.969931&vlat=47.210469&env=0&tech=tech4g"
-           target="_blank"
-           class="coverage-btn FCC">
-           FCC National Broadband Map
-        </a>
-    </div>
+    <a href="https://www.att.com/maps/wireless-coverage.html"
+       target="_blank"
+       class="coverage-btn att">
+       AT&T Coverage Map
+    </a>
+
+    <a href="https://broadbandmap.fcc.gov/location-summary/mobile?version=jun2025&addr_full=121+East+Blackbeard+Run%2C+Shelton%2C+Washington+98584%2C+United+States&lon=-122.96904&lat=47.21153&zoom=14.26&vlon=-122.969931&vlat=47.210469&env=0&tech=tech4g"
+       target="_blank"
+       class="coverage-btn fcc">
+       FCC National Broadband Map
+    </a>
+</div>
+
 </div>
 
     </div>
   </section>
+<section>
+  <h2>iPhone Comparison</h2>
+
+  <!-- Toggle Buttons -->
+  <div style="margin-bottom: 12px;">
+    <button id="btnPros" style="padding: 8px 14px; margin-right: 6px; border-radius: 6px; border: 1px solid #d1d5db; background: #e5e7eb; cursor: pointer;">
+      Pros & Cons
+    </button>
+    <button id="btnSpecs" style="padding: 8px 14px; border-radius: 6px; border: 1px solid #d1d5db; background: #f3f4f6; cursor: pointer;">
+      Specs Table
+    </button>
+  </div>
+
+  <!-- Pros & Cons Section -->
+  <div id="prosSection">
+    <div class="grid">
+
+      <!-- iPhone 14 -->
+      <div class="card">
+        <h3>iPhone 14</h3>
+
+        <h4 class="pros-text">Pros</h4>
+        <ul class="pros-text">
+          <li>Lowest monthly payment</li>
+          <li>Lightweight and easy to hold</li>
+          <li>Excellent battery life</li>
+          <li>Still receives iOS updates for years</li>
+        </ul>
+
+        <h4 class="cons-text">Cons</h4>
+        <ul class="cons-text">
+          <li>Older A15 processor</li>
+          <li>No USB‑C</li>
+          <li>Not as bright outdoors</li>
+        </ul>
+      </div>
+
+      <!-- iPhone 15 -->
+      <div class="card">
+        <h3>iPhone 15</h3>
+
+        <h4 class="pros-text">Pros</h4>
+        <ul class="pros-text">
+          <li>USB‑C charging</li>
+          <li>Better camera</li>
+          <li>Brighter display</li>
+          <li>Newer A16 chip</li>
+        </ul>
+
+        <h4 class="cons-text">Cons</h4>
+        <ul class="cons-text">
+          <li>Higher monthly payment than 14</li>
+          <li>No 120Hz display</li>
+        </ul>
+      </div>
+
+      <!-- iPhone 16 -->
+      <div class="card">
+        <h3>iPhone 16</h3>
+
+        <h4 class="pros-text">Pros</h4>
+        <ul class="pros-text">
+          <li>Newest A18 processor</li>
+          <li>Longest software support</li>
+          <li>Best battery life</li>
+          <li>Best camera system</li>
+        </ul>
+
+        <h4 class="cons-text">Cons</h4>
+        <ul class="cons-text">
+          <li>Highest monthly payment</li>
+          <li>More features than most seniors need</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Specs Table Section -->
+  <div id="specsSection" style="display:none;">
+    <div class="card">
+      <table>
+        <tr>
+          <th>Feature</th>
+          <th>iPhone 14</th>
+          <th>iPhone 15</th>
+          <th>iPhone 16</th>
+        </tr>
+        <tr>
+          <td>Processor</td>
+          <td>A15</td>
+          <td>A16</td>
+          <td>A18</td>
+        </tr>
+        <tr>
+          <td>Battery Life</td>
+          <td>Good</td>
+          <td>Very Good</td>
+          <td>Excellent</td>
+        </tr>
+        <tr>
+          <td>Charging Port</td>
+          <td>Lightning</td>
+          <td>USB‑C</td>
+          <td>USB‑C</td>
+        </tr>
+        <tr>
+          <td>Camera</td>
+          <td>Very Good</td>
+          <td>Excellent</td>
+          <td>Best</td>
+        </tr>
+        <tr>
+          <td>Display Brightness</td>
+          <td>Good</td>
+          <td>Brighter</td>
+          <td>Brightest</td>
+        </tr>
+        <tr>
+          <td>Software Support</td>
+          <td>Several more years</td>
+          <td>Longer</td>
+          <td>Longest</td>
+        </tr>
+        <tr>
+          <td>Monthly Cost</td>
+          <td>Lowest</td>
+          <td>Moderate</td>
+          <td>Highest</td>
+        </tr>
+      </table>
+	   <p class="small">
+        Important consideration: If possible, you are going to want to match the charging port with your iPad for cord/plug management.
+    </div>
+  </div>
+
+</section>
+
+<!-- Toggle Script -->
+<script>
+  const btnPros = document.getElementById("btnPros");
+  const btnSpecs = document.getElementById("btnSpecs");
+  const prosSection = document.getElementById("prosSection");
+  const specsSection = document.getElementById("specsSection");
+
+  btnPros.onclick = () => {
+    prosSection.style.display = "block";
+    specsSection.style.display = "none";
+    btnPros.style.background = "#e5e7eb";
+    btnSpecs.style.background = "#f3f4f6";
+  };
+
+  btnSpecs.onclick = () => {
+    prosSection.style.display = "none";
+    specsSection.style.display = "block";
+    btnPros.style.background = "#f3f4f6";
+    btnSpecs.style.background = "#e5e7eb";
+  };
+</script>
 
   <!-- Cost comparison -->
   <section>
